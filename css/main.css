@@ -6,14 +6,20 @@ h1, a, p {
   margin: 0;
 }
 
+span {
+  font-size: 1.4em;
+}
+
 .wrap {
   background-image: url("../img/wallpaper.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 70% 60%;
-  background-color: gold;
+  background-color: #362623;
   min-height: 100vh;
   width: 100%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
 }
 
 header {
@@ -22,12 +28,15 @@ header {
 }
 
 header h1 {
-  font-size: 3em;
-  margin-bottom: 0.3em;
+  font-family: "Poiret One", cursive;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #2D8D37;
 }
 
 header p {
   font-size: 1.2em;
+  color: #E8E8E8;
 }
 
 section {
@@ -36,28 +45,31 @@ section {
 }
 
 section #instructions {
-  background: darkblue;
-  padding: 1em 1em 8em 1em;
+  color: #2D8D37;
+  padding: 1em 1em 3em 1em;
   max-width: 368px;
   margin: 0 auto;
   border-radius: 10px;
 }
 
 section #instructions h1 {
-  text-align: center;
-  margin-bottom: 0.3em;
-  font-size: 3em;
+  margin-bottom: 0.5em;
+  font-size: 2.5em;
+  font-weight: 300;
 }
 
 section #instructions li {
-  margin-bottom: .5em;
+  margin-bottom: 2em;
   font-size: 1.2em;
+  color: #E8E8E8;
+  font-weight: 300;
 }
 
 section #mapLink {
   display: block;
-  background: pink;
+  background: #E8E8E8;
   text-align: center;
+  color: #2D8D37;
   margin: 0 auto;
   width: 35%;
   max-width: 153.3px;
@@ -69,4 +81,14 @@ section #mapLink {
   bottom: 1em;
   text-decoration: none;
   font-size: 1.2em;
+  font-weight: normal;
+}
+
+section #mapLink:hover {
+  background-color: #2D8D37;
+  color: #E8E8E8;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
 }
