@@ -21,7 +21,7 @@ h1, a, p {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 70% 60%;
-  background-color: #362623;
+  background-color: $bg;
 
   min-height: 100vh;
   width: 100%;
@@ -50,10 +50,10 @@ section {
   position: relative;
   #instructions {
     color: $greenFontColor;
-    padding: 1em 1em 3em 1em;
+    padding: 1em 1em;// 3em 1em;
     max-width: 368px;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 10px; // -- Why is this here?  - Cara
     h1 {
       // text-align: center;
       margin-bottom: $h1BottomMargin;
@@ -71,7 +71,7 @@ section {
     display: block;
     background: $offWhite;
     text-align: center;
-    color: $greenFontColor;
+    color: $green2;
 
     margin: 0 auto;
     width: 35%;
@@ -87,10 +87,30 @@ section {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: normal;
+
+    @include transition;  
     &:hover {
-      background-color: $greenFontColor;
+      background-color: $green2;
       color: $offWhite;
-      @include transition;
+    }
+    &:active{
+      background-color: $greenFontColor;
     }
   }
 } // end section
+
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+    // Just adding a bit of space to the top
+    .wrap{
+      padding-top: 4em;
+    }
+}
+@media only screen and (max-width: 767) and (orientation: landscape){
+    // landscape mode on my phone wasn't working well with 
+    // the background image. this probably needs more adjustments - Cara 
+  .wrap{
+    background-image: url("../img/cropped-wallpaper.jpg");
+    background-position: 130% 130%;
+  }
+}
