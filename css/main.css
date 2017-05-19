@@ -11,7 +11,7 @@ h1, a, p {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 70% 60%;
-  background-color: #362623;
+  background-color: #503e3e;
   min-height: 100vh;
   width: 100%;
   font-family: "Quicksand", sans-serif;
@@ -27,7 +27,7 @@ header h1 {
   font-family: "Poiret One", cursive;
   font-size: 2.5em;
   margin-bottom: 0.5em;
-  color: #2D8D37;
+  color: #72dd7f;
 }
 
 header p {
@@ -41,8 +41,8 @@ section {
 }
 
 section #instructions {
-  color: #2D8D37;
-  padding: 1em 1em 3em 1em;
+  color: #72dd7f;
+  padding: 1em 1em;
   max-width: 368px;
   margin: 0 auto;
   border-radius: 10px;
@@ -78,13 +78,31 @@ section #mapLink {
   text-decoration: none;
   font-size: 1.2em;
   font-weight: normal;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
 }
 
 section #mapLink:hover {
   background-color: #2D8D37;
   color: #E8E8E8;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  transition: all .5s;
+}
+
+section #mapLink:active {
+  background-color: #72dd7f;
+}
+
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  .wrap {
+    padding-top: 4em;
+  }
+}
+
+@media only screen and (max-width: 767) and (orientation: landscape) {
+  .wrap {
+    background-image: url("../img/cropped-wallpaper.jpg");
+    background-position: 130% 130%;
+  }
 }
