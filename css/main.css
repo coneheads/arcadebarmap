@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+#map {
+  height: 30%;
+  width: 30%;
+}
+
 h1, a, p {
   margin: 0;
 }
@@ -105,4 +110,7 @@ section #mapLink:active {
     background-image: url("../img/cropped-wallpaper.jpg");
     background-position: 130% 130%;
   }
+
+
+
 }
