@@ -99,6 +99,11 @@ section {
   }
 } // end section
 
+#map {
+  height: 30vh;
+  width: 30vw;
+}
+
 @media only screen and (min-width: 768px) {
     /* tablets and desktop */
     // Just adding a bit of space to the top

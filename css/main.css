@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-#map {
-  height: 30%;
-  width: 30%;
-}
-
 h1, a, p {
   margin: 0;
 }
@@ -98,6 +93,11 @@ section #mapLink:active {
   background-color: #72dd7f;
 }
 
+#map {
+  height: 30vh;
+  width: 30vw;
+}
+
 @media only screen and (min-width: 768px) {
   /* tablets and desktop */
   .wrap {
@@ -110,7 +110,4 @@ section #mapLink:active {
     background-image: url("../img/cropped-wallpaper.jpg");
     background-position: 130% 130%;
   }
-
-
-
 }
