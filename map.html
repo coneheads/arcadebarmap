@@ -1,0 +1,35 @@
+<html>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Arcade Bar Map</title>
+  	<link rel="stylesheet" href="css/normalize.css">
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|Quicksand:300,400" rel="stylesheet">
+  </head>
+
+  <body>
+  	<div id="map"></div>
+
+    <footer id="menu">
+      <div class="menu-header">
+        <!-- buttons require app.js file -->
+        <!-- <i class="fa fa-times fa-lg btn-menu" id="close-menu"></i> -->
+        <button>
+          <i class="fa fa-search fa-lg" id="search"></i>
+        </button>|
+        <button>
+          <i class="fa fa-car fa-lg" id="navigate"></i>
+        </button>|
+        <button onclick="showFullMenu()"> 
+          <i class="fa fa-bars fa-lg" id="bars"></i>
+        </button>
+      </div>
+      <div class="menu-content hideDiv" id="menu-content">
+        <p>Something here when menu is shown.</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFhIDL3WuSu4Clj0OSsuqJfVdjacGmwE4&libraries=places&callback=initMap" async defer></script>
+</html>
