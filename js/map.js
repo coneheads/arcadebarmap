@@ -39,3 +39,35 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
+
+function toggleMenu(){
+  var menu = document.getElementById("menu");
+  if (document.documentElement.clientWidth < 992) { 
+  // above is a vanilla js version of css media query.  Menu toggle is for small devices!
+    if(menu.style.display === 'none'){
+      menu.style.display = 'block';
+      setTimeout(showMenu, 50);
+      function showMenu(){
+        menu.classList.remove('slideOut');
+      }
+    } else{
+      menu.classList.add('slideOut');
+      setTimeout(hideMenu, 1000);
+      function hideMenu(){
+        menu.style.display = 'none';
+      }
+    };
+  } else {
+  // prevents map from being disabled if window is resized
+  // Should we add some sort of close button to the menu to make this feel more intentional? xD 
+    menu.style.display = 'block';
+    setTimeout(showMenu, 50);
+    function showMenu(){
+      menu.classList.remove('slideOut');
+    }
+  }
+}
+
+function showFullMenu(){
+  document.getElementById("menu-content").classList.toggle('hideDiv');
+}
