@@ -17,6 +17,17 @@ function initMap() {
     keyword: ["arcade", "videogames"],
     type: ['bar']
   }, callback);
+
+  /// adds menu toggle on map click  ///
+  var updateTimeout
+  map.addListener('click', function(){           
+    updateTimeout = setTimeout(toggleMenu, 400);  
+    ///timeout is to see if there is a double click.                           
+    });                                           
+  map.addListener('dblclick', function(){
+    // on doubleclick event, only performs default zoom instead of menu toggle
+    clearTimeout(updateTimeout); 
+  });
 }
 
 function callback(results, status) {
@@ -42,7 +53,7 @@ function createMarker(place) {
 
 function toggleMenu(){
   var menu = document.getElementById("menu");
-  if (document.documentElement.clientWidth < 992) { 
+  if (document.documentElement.clientWidth < 768) { 
   // above is a vanilla js version of css media query.  Menu toggle is for small devices!
     if(menu.style.display === 'none'){
       menu.style.display = 'block';
@@ -70,4 +81,9 @@ function toggleMenu(){
 
 function showFullMenu(){
   document.getElementById("menu-content").classList.toggle('hideDiv');
+}
+
+//sets large screens to show full menu by default.
+if (document.documentElement.clientWidth > 768) {
+  document.getElementById("menu-content").classList.remove('hideDiv');
 }

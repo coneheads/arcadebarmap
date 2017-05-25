@@ -1,0 +1,88 @@
+@import "variables";
+@import "prefixMixin";  
+//To Use: @include prefix(property, value, prefix1 prefix2...);
+#map {
+  width: 100%;
+  height: 100vh;
+}
+
+header{
+ display: none;
+}
+
+footer {
+	display: block;  
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0; padding: 0; width: 100%;
+	background-color: $offWhite;
+	box-shadow: -.1em 0 .3em 0 #333;
+	@include prefix(transform, translateY(0%), webkit moz ms);
+	@include prefix(transition, transform .6s ease-in-out, webkit moz ms);
+	font-size: .8em;
+}
+
+.menu-header{
+	width: 100%;
+	text-align: right;
+}
+button{
+	padding: .5em 1em;
+	border: none;
+	background-color: $offWhite;
+	color: $bg;
+	@include prefix(transition, background-color .5s, webkit moz ms)
+	&:hover{
+		background-color: #ccc;
+	}
+	&:active{
+		background-color: #bbb;
+	}
+}
+.menu-content{
+	padding: .1em;  //setting this to 0 breaks the background color at edges for some reason?
+	margin: 0;
+	max-height: 60vh;
+	background-color: $bg;
+	color: $offWhite;
+	@include prefix(transition, all .7s ease-in-out, webkit moz ms);
+}
+
+/////////// For javascript button toggles. ////////////
+.slideOut{
+	@include prefix(transform, translateY(110%) !important, webkit ms);
+}
+	//possible: add slide left, slide right, for menu navigation?
+.hideDiv{
+	overflow: hidden;
+	max-height: 0 !important;
+}
+
+@media only screen and (min-width: 768px) { 
+	///////// Displays menu by default on PC monitors. //////
+	footer {
+		display: block;
+		@include prefix(transform, translateY(0%), webkit ms);
+	}
+	/////// Adds header for larger screens //////
+	header {
+		display: block;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100vw;
+  	text-align: center;
+  	padding: 1em;
+  	background-color: $bg;
+  	box-shadow: .2em 0 .3em 0 #333;
+  	h1 {
+    	font-family: $poiretOne;
+    	font-size: $h1FontSize;
+    	margin-bottom: $h1BottomMargin;
+    	color: $greenFontColor;
+  	}
+	} // end header
+}
