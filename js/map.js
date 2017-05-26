@@ -54,6 +54,14 @@ function openMap(){
         lng: position.coords.longitude
       };
       map.setCenter(pos);
+
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch({
+        location: pos,
+        radius: 15000,
+        keyword: ["arcade", "videogames"],
+        type: ['bar']
+      }, callback);
     }, function(){
       handleLocationError(true);
     });
