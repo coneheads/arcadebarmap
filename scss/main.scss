@@ -78,6 +78,7 @@ section {
     max-width: 153.3px;
     padding: .5em 0;
     border-radius: 20px;
+    border: none;
 
     position: absolute;
     left: 0;
@@ -100,6 +101,7 @@ section {
 } // end section
 
 #map {
+  visibility: hidden;
   height: 30vh;
   width: 30vw;
 }
